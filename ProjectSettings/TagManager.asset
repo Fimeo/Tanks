@@ -44,11 +44,8 @@ TagManager:
   - name: Ground
     uniqueID: 3301629363
     locked: 0
-  - name: DetailsBottom
+  - name: Details
     uniqueID: 1066282299
-    locked: 0
-  - name: DetailsTop
-    uniqueID: 1962814765
     locked: 0
   - name: Obstacles
     uniqueID: 3078473489
