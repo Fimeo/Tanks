@@ -4,41 +4,35 @@ using UnityEngine;
 
 public class TankController : MonoBehaviour
 {
-    public Rigidbody2D rb2d;
-    private Vector2 movementVector;
-    public float maxSpeed = 10;
-    public float rotationSpeed = 100;
-    public float turretRotationSpeed = 150;
-
-    public Transform turretParent;
-
+    public TankMover tankMover;
+    public AimTurret aimTurret;
+    public Turret[] turrets;
+   
     private void Awake()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        if (tankMover == null)
+            tankMover = GetComponentInChildren<TankMover>();
+        if (aimTurret == null)
+            aimTurret = GetComponentInChildren<AimTurret>();
+        if (turrets == null || turrets.Length == 0)
+            turrets = GetComponentsInChildren<Turret>();
     }
 
     public void HandleShoot()
     {
-        Debug.Log("Shooting");
+        foreach(var turret in turrets)
+        {
+            turret.Shoot();
+        }
     }
 
     public void HandleMoveBody(Vector2 movementVector)
     {
-        this.movementVector = movementVector;
+        tankMover.Move(movementVector);
     }
 
     public void HandleTurretMovement(Vector2 pointerPosition)
     {
-        var turretDirection = (Vector3)pointerPosition - turretParent.position;
-        var desiredAngle = Mathf.Atan2(turretDirection.y, turretDirection.x) * Mathf.Rad2Deg;
-        var rotationSpeed = turretRotationSpeed * Time.deltaTime;
-
-        turretParent.rotation = Quaternion.RotateTowards(turretParent.rotation, Quaternion.Euler(0, 0, desiredAngle - 90), rotationSpeed);
-    }
-
-    private void FixedUpdate()
-    {
-        rb2d.velocity = maxSpeed * movementVector.y * Time.fixedDeltaTime * (Vector2)transform.up;
-        rb2d.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -movementVector.x * rotationSpeed * Time.fixedDeltaTime));
+        aimTurret.Aim(pointerPosition);
     }
 }
