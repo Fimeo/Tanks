@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6089860912643784eae7ea6c4532b68e, type: 3}
   m_Name: BasicTurretData
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 9058053375235583981, guid: 98d4217428f925f4ab008936ef0e7703, type: 3}
   reloadDelay: 1
-  bulletData: {fileID: 0}
+  bulletData: {fileID: 11400000, guid: 744f81caf5bfdfb458cc9e5245aaa41a, type: 2}
