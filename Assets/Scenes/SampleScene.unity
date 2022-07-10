@@ -5282,6 +5282,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8306834559454874869, guid: e8fbc7014e146364e98b827fa7ae3f2d, type: 3}
   m_PrefabInstance: {fileID: 8306834560602141379}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1285553721 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 8306834559454874868, guid: e8fbc7014e146364e98b827fa7ae3f2d, type: 3}
+  m_PrefabInstance: {fileID: 8306834560602141379}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1364140490
 GameObject:
   m_ObjectHideFlags: 0
@@ -12098,5 +12103,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank
       objectReference: {fileID: 0}
+    - target: {fileID: 8306834559661651894, guid: e8fbc7014e146364e98b827fa7ae3f2d, type: 3}
+      propertyPath: rb2d
+      value: 
+      objectReference: {fileID: 1285553721}
+    - target: {fileID: 8306834559661651894, guid: e8fbc7014e146364e98b827fa7ae3f2d, type: 3}
+      propertyPath: movementData
+      value: 
+      objectReference: {fileID: 11400000, guid: a48804630bbf2cb4bb43d2dc2c745c91, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8fbc7014e146364e98b827fa7ae3f2d, type: 3}

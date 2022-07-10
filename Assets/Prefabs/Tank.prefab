@@ -147,8 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretBarrels:
   - {fileID: 8306834559785646418}
-  bulletPrefab: {fileID: 9058053375235583981, guid: 98d4217428f925f4ab008936ef0e7703, type: 3}
-  reloadDelay: 1
+  turretData: {fileID: 11400000, guid: e0db6d2dbb4ec9d4db6f554f7c8797b2, type: 2}
   bulletPoolCount: 10
 --- !u!114 &3215428792926143407
 MonoBehaviour:
@@ -403,12 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
-  maxSpeed: 70
-  rotationSpeed: 200
-  acceleration: 70
-  deacceleration: 90
-  currentSpeed: 0
-  currentForwardDirection: 1
+  movementData: {fileID: 0}
 --- !u!1 &8306834559785646419
 GameObject:
   m_ObjectHideFlags: 0

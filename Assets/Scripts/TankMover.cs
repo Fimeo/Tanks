@@ -7,13 +7,10 @@ public class TankMover : MonoBehaviour
 {
     public Rigidbody2D rb2d;
 
-    public float maxSpeed = 10;
-    public float rotationSpeed = 100;
-    public float acceleration = 70;
-    public float deacceleration = 50;
-    public float currentSpeed = 0;
-    public float currentForwardDirection = 1;
+    public TankMovementData movementData;
 
+    private float currentSpeed = 0;
+    private float currentForwardDirection = 1;
     private Vector2 movementVector;
 
     private void Awake()
@@ -35,18 +32,18 @@ public class TankMover : MonoBehaviour
     {
         if (Math.Abs(movementVector.y) > 0)
         {
-            currentSpeed += acceleration * Time.deltaTime;
+            currentSpeed += movementData.acceleration * Time.deltaTime;
         }
         else
         {
-            currentSpeed -= deacceleration * Time.deltaTime;
+            currentSpeed -= movementData.deacceleration * Time.deltaTime;
         }
-        currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
+        currentSpeed = Mathf.Clamp(currentSpeed, 0, movementData.maxSpeed);
     }
 
     private void FixedUpdate()
     {
         rb2d.velocity = currentSpeed * currentForwardDirection * Time.fixedDeltaTime * (Vector2)transform.up;
-        rb2d.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -movementVector.x * rotationSpeed * Time.fixedDeltaTime));
+        rb2d.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -movementVector.x * movementData.rotationSpeed * Time.fixedDeltaTime));
     }
 }
