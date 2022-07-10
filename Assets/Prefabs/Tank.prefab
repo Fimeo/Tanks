@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 8306834559445963079}
   - component: {fileID: 8306834559445963078}
   - component: {fileID: 8306834559445963077}
+  - component: {fileID: 3215428792926143407}
   m_Layer: 7
   m_Name: TankTurret
   m_TagString: Untagged
@@ -148,6 +149,22 @@ MonoBehaviour:
   - {fileID: 8306834559785646418}
   bulletPrefab: {fileID: 9058053375235583981, guid: 98d4217428f925f4ab008936ef0e7703, type: 3}
   reloadDelay: 1
+  bulletPoolCount: 10
+--- !u!114 &3215428792926143407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8306834559445963072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e511ee83ecdc12a449a914a60b6b82a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToPool: {fileID: 0}
+  poolSize: 10
+  spawnedObjectsParent: {fileID: 0}
 --- !u!1 &8306834559454874871
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,6 +178,7 @@ GameObject:
   - component: {fileID: 8306834559454874875}
   - component: {fileID: 8306834559454874870}
   - component: {fileID: 5220695972344262248}
+  - component: {fileID: 7915594810159252108}
   m_Layer: 7
   m_Name: Tank
   m_TagString: Untagged
@@ -253,7 +271,19 @@ MonoBehaviour:
   health: 0
   OnDead:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7915594810159252108}
+        m_TargetAssemblyTypeName: DestroyUtil, Assembly-CSharp
+        m_MethodName: DestroyHelper
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHealthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -263,6 +293,18 @@ MonoBehaviour:
   OnHeal:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7915594810159252108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8306834559454874871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680e70c4ad5f1ec4cb977d947a9e43ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8306834559661651889
 GameObject:
   m_ObjectHideFlags: 0
