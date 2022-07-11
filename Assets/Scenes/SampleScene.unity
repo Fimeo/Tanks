@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1018402388}
     m_Modifications:
+    - target: {fileID: 5220695972344262248, guid: e8fbc7014e146364e98b827fa7ae3f2d, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1018402389}
+    - target: {fileID: 5220695972344262248, guid: e8fbc7014e146364e98b827fa7ae3f2d, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DestroyHelper
+      objectReference: {fileID: 0}
     - target: {fileID: 8306834559445963078, guid: e8fbc7014e146364e98b827fa7ae3f2d, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -240,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976a55b2d6a61114e95d1684a975215c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 2.2
+  viewRadius: 3.5
   detectionCheckDelay: 0.1
   target: {fileID: 0}
   playerLayerMask:
@@ -5397,6 +5405,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1018402388}
+  - component: {fileID: 1018402392}
+  - component: {fileID: 1018402391}
+  - component: {fileID: 1018402390}
+  - component: {fileID: 1018402389}
   m_Layer: 0
   m_Name: StaticEnemy
   m_TagString: Untagged
@@ -5420,6 +5432,62 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1018402389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018402387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680e70c4ad5f1ec4cb977d947a9e43ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1018402390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018402387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e77935f7433da24f8f84960c4cef2cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolDelay: 4
+  randomDirection: {x: 0, y: 0}
+  currentPatrolDelay: 0
+--- !u!114 &1018402391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018402387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566b39e567f42ec4b9ed897a48d83d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fieldOfVisionForShooting: 60
+--- !u!114 &1018402392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018402387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 023cc2255830aaa4ea28177c67824e5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootBehaviour: {fileID: 1018402391}
+  patrolBehaviour: {fileID: 1018402390}
+  tank: {fileID: 1285553717}
+  detector: {fileID: 0}
 --- !u!1 &1285553716 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8306834559454874871, guid: e8fbc7014e146364e98b827fa7ae3f2d, type: 3}
