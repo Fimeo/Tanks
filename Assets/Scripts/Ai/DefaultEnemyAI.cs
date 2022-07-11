@@ -22,12 +22,8 @@ public class DefaultEnemyAI : MonoBehaviour
     private void Update()
     {
         if (detector.TargetVisible)
-        {
             shootBehaviour.PerformAction(tank, detector);
-        }
         else
-        {
             patrolBehaviour.PerformAction(tank, detector);
-        }
     }
 }

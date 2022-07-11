@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIShootBehaviour : AIBehaviour { 
+public class AIShootBehaviour : AIBehaviour {
     public float fieldOfVisionForShooting = 60;
 
     public override void PerformAction(TankController tank, AIDetector detector)
